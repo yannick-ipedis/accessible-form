@@ -278,3 +278,8 @@ body {
     top: 485px;
     left: 190px;
   }
+
+  .error-message{
+    display: none;
+    color:red;
+  }
