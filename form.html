@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="js/jquery-2.2.4.min.js" type="javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js" type="javascript"></script>
+	<title>Formulaire d'Accessibilite</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+
+<body>
+	
+  <form class="signup-form" action="#" id="signup-form">
+    <div class="signup-form_header">
+      <div>
+        <img src="https://img.icons8.com/color/48/000000/group-background-selected.png" alt="">
+      </div>
+      <div>
+        <h1>Accessible form</h1>
+      </div>
+    </div>
+    
+    <div class="signup-form_two-items">
+      <div>
+        <label for="fname">First Name: <span aria-hidden="true">*</span></label>
+        <input required type="text" id="fname" name="fname" placeholder="First Name" size="13" aria-describedby="error-required-name">
+        <div class="error-message" id="error-required-name">Le champ Nom est obligatoire.</div>
+      </div>
+      <div>
+        <label for="lname">Last Name:</label>
+        <input required type="text" id="lname" name="lname" placeholder="Last Name" size="13">
+      </div>
+    </div>
+   
+    <div class="signup-form_uname">
+      <label for="uname">User Name:</label>
+      <input required type="text" id="uname" name="uname" placeholder="User Name">
+    </div>
+    
+    <div class="signup-form_email">
+      <label for="email">Email:</label>
+      <input required type="email" id="email" name="email" placeholder="Email">
+    </div>
+    
+    <div class="signup-form_age">
+      <label for="quantity">Age:</label>
+      <input required type="number" id="age" name="age" min="1" max="1000" placeholder="Age">
+    </div>
+    
+    <div class="signup-form_country">
+      <label for="country">Country:</label>
+      <select id="country" name="country">
+        <option value="Canada">Canada</option>
+        <option value="USA">USA</option>
+        <option value="france">france</option>
+        <option value="Italia">Italia</option>
+        <option value="Germany">Germany</option>
+      </select>
+    </div>
+    
+     <div class="signup-form_gender">
+      <fieldset>
+        <legend>Gender</legend>
+        <label for="male">Male</label>
+        <input type="radio" id="male" name="gender" value="male">
+        <label for="female">Female</label>
+        <input type="radio" id="female" name="gender" value="female">
+        <label for="other">Other</label>
+        <input type="radio" id="other" name="gender" value="other">
+      </fieldset>
+    </div>
+
+    <div class="signup-form_disabilities">
+    <fieldset>
+        <legend>Disabilities... </legend>
+        <p>
+            <label for="visual">
+                Visual Disabilities
+                <input type="checkbox" id="black" />
+            </label>
+        </p>
+        <p>
+            <label for="auditory">
+                Auditory Disabilities
+                <input type="checkbox" id="white" />
+            </label>
+        </p>
+        <p>
+            <label for="motor">
+                Motor Disabilities
+                <input type="checkbox" id="motor" />
+            </label>
+        </p>
+        <p>
+            <label for="cognitive">
+                Cognitive
+                <input type="checkbox" id="cognitive" />
+            </label>
+        </p>
+
+        <textarea name="message" rows="5" cols="55">
+            Additional information...
+        </textarea>
+    </fieldset>
+    
+    
+    <div class="signup-form_two-items">
+      <div>
+        <label for="pwd">Password:</label>
+        <input required type="password" id="pwd" name="pwd" size="12" placeholder="Type your password">
+      </div>
+      <div>
+        <label for="conf_pwd">Confirm password:</label>
+        <input required type="password" id="conf_pwd" name="conf_pwd" size="12" placeholder="Confirm the password">
+      </div>
+    </div>
+    
+    <div class="signup-form_remember">
+      <input type="checkbox" id="remember" checked="checked" name="remember">
+      <label for="remember">remember me</label>
+    </div>
+    
+    <div class="signup-form_footer">
+      <button type="submit">Submit</button>
+    </div>
+
+    <section class="error-message">
+        <div class="error-message_arrow"></div>
+        <div class="error-message_body"><span>error message</span></div>
+      </section>
+    </form>
+  </div>
+</form>
+    <script src="js/script.js" type="javascript"></script>
+  </body>
+</html>
