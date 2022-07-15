@@ -1,0 +1,280 @@
+body {
+    
+
+    background: linear-gradient(to right, #cc8b37, #70c5a5, #2ac7a5);
+    font-family: "Times New Roman", Times, serif;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .signUpPage {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .signup-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    position: relative;
+    width: 400px;
+    background-color: transparent;
+    border-radius: 5px;
+  }
+  
+  .signup-form > div {
+    box-sizing: border-box;
+    width: 600px;
+    padding: 7px 10px;
+    background-color: white;
+    border: 1px solid rgb(107, 106, 106);
+    border-top: none;
+    border-bottom: none;
+  }
+  
+  div.signup-form_header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top: 1px solid gray;
+    border-radius: 5px 5px 0 0;
+  }
+  
+  div.signup-form_header div {
+    font-size: 0.9em;
+    text-align: center;
+  }
+  
+  .signup-form label {
+    font-size: 0.9em;
+    cursor: pointer;
+  }
+  
+  .signup-form input {
+    font-family: "Arial, Helvetica, sans-serif;
+    font-size: 14px;
+  }
+  
+  .signup-form > div > label {
+    display: inline-block;
+    width: 85px;
+  } 
+  
+  .signup-form input {
+    border: none;
+    border-bottom: 1px solid gray;
+  }
+  
+  .signup-form_two-items {
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .signup-form_two-items > div {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .signup-form_two-items > div:last-child {
+    margin-left: 10px;
+  }
+  
+  .signup-form_age input {
+    width: 50px;
+  }
+  
+  .signup-form_country select {
+    border: none;
+    border-bottom: 1px solid gray;
+    background-color: white;
+  }
+  
+  .signup-form_gender legend {
+    color: gray;
+    font-size: 0.8em;
+  }
+  
+  .signup-form_gender fieldset {
+    padding: 10px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+  }
+  
+  .signup-form_gender div {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+  
+  .signup-form_gender label {
+    padding-left: 10px;
+  }
+  
+  .signup-form_about {
+    display: flex;
+  }
+  
+  .signup-form_about textarea {
+    padding: 5px;
+    border: 1px solid lightgray;
+    border-radius: 3px;
+  }
+  
+  div.signup-form_remember {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid gray;
+    border-radius: 0 0 0 5px;
+  }
+  
+  .signup-form_remember input + label {
+    width: 150px;
+    padding-left: 5px;
+  }
+  
+  div.signup-form_footer {
+    align-self: flex-end;
+    width: 100px;
+    margin-top: -1px;
+    border-bottom: 1px solid gray;
+    border-top: 1px solid white;
+    border-radius: 0 0 5px 5px;
+  }
+  
+  .signup-form_footer button {
+    width: 80px;
+  }
+  
+  .userData {
+    width: 300px;
+    margin: 10px;
+    padding: 5px;
+    border: 1px solid gray;
+    border-radius: 4px;
+    background-color: white;
+    list-style: none;
+    font-size: 1em;
+  }
+  
+  .userData h2 {
+    margin: 0;
+    padding-bottom: 5px;
+    text-align: center;
+    font-size: 1em;
+  }
+  
+  .userData li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 3px;
+    border-top: 1px dashed lightgray;
+    font-family: "Arial, Helvetica, sans-serif";
+    font-size: 0.8em;
+  }
+  
+  .userData li div:first-child {
+    width: 80px;
+    margin-right: 5px;
+    border-right: 1px dashed lightgray;
+    font-size: 0.9em;
+    color: gray;
+  }
+  
+  .error-message__right {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  
+  .error-message_arrow__right {
+    width: 0; 
+    height: 0; 
+    border-top: 8px solid transparent;
+    border-bottom: 8px solid transparent; 
+    border-right: 8px solid #c0392b; 
+  }
+  
+  .error-message__top {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    position: absolute;
+  }
+  
+  .error-message_arrow__top {
+    width: 0; 
+    height: 0; 
+    border-top: 8px solid #c0392b;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+  }
+  
+  .error-message__bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+  }
+  
+  .error-message_arrow__bottom {
+    width: 0; 
+    height: 0; 
+    border-bottom: 8px solid #c0392b;
+    border-right: 8px solid transparent;
+    border-left: 8px solid transparent;
+  }
+  
+  .error-message_body {
+    padding: 5px;
+    border-radius: 3px;
+    background-color: #c0392b;
+    color: white;
+    font-size: 0.8em;
+  }
+  
+  .fname_err-coords {
+    top: 59px;
+    left: 5px;
+  }
+  
+  .lname_err-coords {
+    top: 59px;
+    left: 180px;
+  }
+  
+  .uname_err-coords {
+    top: 125px;
+    left: 175px;
+  }
+  
+  .email_err-coords {
+    top: 160px;
+    left: 140px;
+  }
+  
+  .age_err-coords {
+    top: 195px;
+    left: 150px;
+  }
+  
+  .pwd_err-coords {
+    top: 420px;
+    left: 10px;
+  }
+  
+  .conf_pwd_err-coords {
+    top: 485px;
+    left: 190px;
+  }
