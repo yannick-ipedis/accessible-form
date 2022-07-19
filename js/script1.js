@@ -27,42 +27,32 @@ $(document).ready(function(){
             }
         });
 
-
-        //Validate Password
-        $("#pwd").hide();
-        let passwordError = true;
+        // Validate Password
+         $("#pwd").hide();
+            let passwordError = true;
         $("#pwd").keyup(function () {
             validatePassword();
         });
-        
-        function verifyPassword(pwd) { 
-             
-            //minimum password length validation  
-            if(pwd.length < 5) {  
-                $("#error-required-pwd").html("Le mot de passe doit contenir au moins 5 caracteres!");  
-                $("#error-required-pwd").show();
-               
-              return false;  
-            }  
- 
-            //maximum length of password validation  
-            if(conf_pwd.length > 15) {  
-                $("#error-required-conf_pwd").html("Le mot de passe doit contenir moins 15 caracteres!"); 
-                $("#error-required-conf_pwd").show();
-             return false;  
 
-           } else {  
-            alert("Mot de passe invalide");            
-           }  
-        }  
-        if (validate != 0){
-            $("input[aria-invalid]:eq(0)").focus(); //Set focus on first invalid field
-            return false;
+        function validatePassword() {
+        let passwordValue = $("#pwd").val();
+            if (passwordValue.length == "") {
+             $("#pwd").show();
+            passwordError = false;
+                return false;
         }
 
-  
-        return false;
-        })
-        
+            if (passwordValue.length < 3 || passwordValue.length > 10) {
+            $("#pwd").show();
+            $("#pwd").html( "**length of your password must be between 3 and 10");
 
-})
+            $("#pwd").css("color", "red");
+            passwordError = false;
+                 return false;
+             }    else {
+            $("#pwd").hide();
+          }
+        }
+
+    });
+});

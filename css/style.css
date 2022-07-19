@@ -1,9 +1,9 @@
 body {
     
 
-    background: linear-gradient(to right, #cc8b37, #70c5a5, #2ac7a5);
+    background: linear-gradient(to right, #c28638, #70c5a5, #2ac7a5);
     font-family: "Times New Roman", Times, serif;
-    font-size: 20px;
+    font-size: 18px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -13,8 +13,7 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+   
   }
   
   .signup-form {
@@ -22,20 +21,21 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
-    position: relative;
-    width: 400px;
+    position: center;
+    width: 550px;
     background-color: transparent;
     border-radius: 5px;
   }
   
   .signup-form > div {
     box-sizing: border-box;
-    width: 600px;
+    width: 700px;
     padding: 7px 10px;
-    background-color: white;
-    border: 1px solid rgb(107, 106, 106);
+    background-color: rgb(255, 255, 255);
+    border: 1px solid rgb(124, 124, 124);
     border-top: none;
     border-bottom: none;
+   
   }
   
   div.signup-form_header {
@@ -44,26 +44,33 @@ body {
     justify-content: center;
     border-top: 1px solid gray;
     border-radius: 5px 5px 0 0;
+    
   }
   
   div.signup-form_header div {
     font-size: 0.9em;
     text-align: center;
+    align-items: center;
+    justify-content: center;
   }
   
   .signup-form label {
     font-size: 0.9em;
     cursor: pointer;
+    align-items: center;
+    justify-content: center;
   }
   
   .signup-form input {
     font-family: "Arial, Helvetica, sans-serif;
     font-size: 14px;
+  
   }
   
   .signup-form > div > label {
     display: inline-block;
     width: 85px;
+    
   } 
   
   .signup-form input {
@@ -79,6 +86,7 @@ body {
   .signup-form_two-items > div {
     display: flex;
     flex-direction: column;
+    
   }
   
   .signup-form_two-items > div:last-child {
@@ -93,23 +101,27 @@ body {
     border: none;
     border-bottom: 1px solid gray;
     background-color: white;
+    
   }
   
   .signup-form_gender legend {
     color: gray;
     font-size: 0.8em;
+   
   }
   
   .signup-form_gender fieldset {
     padding: 10px;
     border: 1px solid lightgray;
     border-radius: 3px;
+    
   }
   
   .signup-form_gender div {
     display: flex;
     flex-direction: row;
-    align-items: center;
+   
+    
   }
   
   .signup-form_gender label {
@@ -118,12 +130,15 @@ body {
   
   .signup-form_about {
     display: flex;
+    
   }
   
   .signup-form_about textarea {
     padding: 5px;
     border: 1px solid lightgray;
     border-radius: 3px;
+    align-items: center;
+    justify-content: center;
   }
   
   div.signup-form_remember {
@@ -131,24 +146,30 @@ body {
     align-items: center;
     border-bottom: 1px solid gray;
     border-radius: 0 0 0 5px;
+   
   }
   
   .signup-form_remember input + label {
     width: 150px;
     padding-left: 5px;
+  
   }
   
   div.signup-form_footer {
     align-self: flex-end;
     width: 100px;
     margin-top: -1px;
-    border-bottom: 1px solid gray;
-    border-top: 1px solid white;
+    border-bottom: 1px solid rgb(128, 128, 128);
+    border-top: 1px solid rgb(255, 255, 255);
     border-radius: 0 0 5px 5px;
+    align-items: center;
+    justify-content: center;
   }
   
   .signup-form_footer button {
     width: 80px;
+    align-items: center;
+    justify-content: center;
   }
   
   .userData {
@@ -160,6 +181,8 @@ body {
     background-color: white;
     list-style: none;
     font-size: 1em;
+    align-items: center;
+    justify-content: center;
   }
   
   .userData h2 {
@@ -167,6 +190,8 @@ body {
     padding-bottom: 5px;
     text-align: center;
     font-size: 1em;
+    align-items: center;
+    justify-content: center;
   }
   
   .userData li {
@@ -177,6 +202,8 @@ body {
     border-top: 1px dashed lightgray;
     font-family: "Arial, Helvetica, sans-serif";
     font-size: 0.8em;
+    align-items: center;
+    justify-content: center;
   }
   
   .userData li div:first-child {
@@ -185,6 +212,8 @@ body {
     border-right: 1px dashed lightgray;
     font-size: 0.9em;
     color: gray;
+    align-items: center;
+    justify-content: center;
   }
   
   .error-message__right {
@@ -194,14 +223,15 @@ body {
     position: absolute;
     top: 10px;
     left: 10px;
+    
   }
   
   .error-message_arrow__right {
     width: 0; 
     height: 0; 
-    border-top: 8px solid transparent;
-    border-bottom: 8px solid transparent; 
-    border-right: 8px solid #c0392b; 
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent; 
+    border-right: 6px solid #c0392b; 
   }
   
   .error-message__top {
@@ -214,9 +244,9 @@ body {
   .error-message_arrow__top {
     width: 0; 
     height: 0; 
-    border-top: 8px solid #c0392b;
-    border-right: 8px solid transparent;
-    border-left: 8px solid transparent;
+    border-top: 6px solid #c0392b;
+    border-right: 6px solid transparent;
+    border-left: 6px solid transparent;
   }
   
   .error-message__bottom {
@@ -283,3 +313,5 @@ body {
     display: none;
     color:red;
   }
+
+  
