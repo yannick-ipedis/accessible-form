@@ -5,7 +5,9 @@ $(document).ready(function(){
     //     }
     // });
 
-    $("#signup-form").on("submit",function(){
+   
+        $("#signup-form").on("submit",function(){
+        
         verifyPassword($("#pwd").val());
         var validate = 0;
 
@@ -28,26 +30,25 @@ $(document).ready(function(){
         });
 
 
-        //Validate Password
-        $("#pwd").hide();
-        let passwordError = true;
-        $("#pwd").keyup(function () {
-            validatePassword();
-        });
-        
         function verifyPassword(pwd) { 
-             
-            //minimum password length validation  
+             //Validate Password
+            $("#error-required-pwd").hide();
+            let passwordError = true;
+            $("#error-required-pwd").keyup(function () {
+              validatePassword();
+            });
+            
+            //-minimum password length validation  
             if(pwd.length < 5) {  
-                $("#error-required-pwd").html("Le mot de passe doit contenir au moins 5 caracteres!");  
+                $("#error-required-pwd").html("Mot de passe obligatoire et doit contenir au moins 5 caracteres!");  
                 $("#error-required-pwd").show();
                
               return false;  
             }  
  
-            //maximum length of password validation  
+            //-maximum length of confirm password validation  
             if(conf_pwd.length > 15) {  
-                $("#error-required-conf_pwd").html("Le mot de passe doit contenir moins 15 caracteres!"); 
+                $("#error-required-conf_pwd").html("Confirmation obligatoire et doit contenir moins 15 caracteres!"); 
                 $("#error-required-conf_pwd").show();
              return false;  
 
