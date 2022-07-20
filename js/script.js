@@ -5,8 +5,47 @@ $(document).ready(function(){
     //     }
     // });
 
-   
-        $("#signup-form").on("submit",function(){
+    $("#signup-form").on("submit",function(){
+        
+        // Validate Username
+        $("#error-required-uname").hide();
+        let usernameError = true;
+        $("#uname").keyup(function () {
+       validateUsername();
+    });
+ 
+    function validateUsername() {
+      let usernameValue = $("#uname").val();
+         if (usernameValue.length == "") {
+       $("#error-required-uname").show();
+          usernameError = false;
+          return false;
+     } else if (usernameValue.length < 3 || usernameValue.length > 10) {
+       $("#error-required-uname").show();
+       $("#error-required-uname").html("**length of username must be between 3 and 10");
+      usernameError = false;
+      return false;
+    } else {
+      $("#error-required-uname").hide();
+    }
+  }
+
+      
+
+    // Validate Email
+    const email = document.getElementById("email");
+    email.addEventListener("blur", () => {
+    let regex = /^([_\-\.0-9a-zA-Z]+)@([_\-\.0-9a-zA-Z]+)\.([a-zA-Z]){2,7}$/;
+    let s = email.value;
+      if (regex.test(s)) {
+    email.classList.remove("is-invalid");
+      emailError = true;
+    } else {
+      email.classList.add("is-invalid");
+      emailError = false;
+    }
+      });
+
         
         verifyPassword($("#pwd").val());
         var validate = 0;
