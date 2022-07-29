@@ -4,8 +4,57 @@ $(document).ready(function(){
     //       form.submit();
     //     }
     // });
+drctf
+    //Dropdown
+    $(function() {
+      $('.dropdown ul li').on('click', function() {
+        var label = $(this).parent().parent().children('label');
+        label.attr('data-value', $(this).attr('data-value'));
+        label.html($(this).html());
+    
+        $(this).parent().children('.selected').removeClass('selected');
+        $(this).addClass('selected');
+      });
+    });
+
 
     $("#signup-form").on("submit",function(){
+
+        // Validate Username
+        $("#error-required-uname").hide();
+        let usernameError = true;
+        $("#uname").keyup(function () {
+       validateUsername();
+    });
+ 
+    function validateUsername() {
+      let usernameValue = $("#uname").val();
+         if (usernameValue.length == "") {
+       $("#error-required-uname").show();
+          usernameError = false;
+          return false;
+     } else if (usernameValue.length < 3 || usernameValue.length > 10) {
+       $("#error-required-uname").show();
+       $("#error-required-uname").html("**La longueure du nom d'utilisateur doit etre entre 3 et 10");
+      usernameError = false;
+      return false;
+    } else {
+      $("#error-required-uname").hide();
+    }
+  }
+  
+        //Validate Phone Number
+        //it will only allow numeric keys
+        $(".AllowNumeric").on("keypress keyup blur",function (event) {    
+          $(this).val($(this).val().replace(/[^\d].+/, ""));
+            if ((event.which < 8 || event.which > 10)) {
+       event.preventDefault();
+            }
+       });
+        
+
+
+        verifyPassword($("#pwd").val());
         var validate = 0;
 
         $(".required-field").each(function(){
@@ -27,11 +76,40 @@ $(document).ready(function(){
         });
 
 
+        function verifyPassword(pwd) { 
+             //Validate Password
+            $("#error-required-pwd").hide();
+            let passwordError = true;
+            $("#error-required-pwd").keyup(function () {
+              validatePassword();
+            });
+            
+            //-minimum password length validation  
+            if(pwd.length < 5) {  
+                $("#error-required-pwd").html("Mot de passe obligatoire et doit contenir au moins 5 caracteres!");  
+                $("#error-required-pwd").show();
+               
+              return false;  
+            }  
+ 
+            //-maximum length of confirm password validation  
+            if(conf_pwd.length > 15) {  
+                $("#error-required-conf_pwd").html("Confirmation obligatoire et doit contenir moins 15 caracteres!"); 
+                $("#error-required-conf_pwd").show();
+             return false;  
+
+           } else {  
+            alert("Mot de passe invalide");            
+           }  
+        }  
         if (validate != 0){
             $("input[aria-invalid]:eq(0)").focus(); //Set focus on first invalid field
             return false;
         }
 
+  
         return false;
-    })
+        })
+        
+
 })
