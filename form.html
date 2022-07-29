@@ -12,66 +12,63 @@
 	</head>
 	<body>
 		<main role="main">
-			<form class="signup-form" action="#" id="signup-form" method="get" autocomplete="on">
+			<form class="signup-form" action="#" id="signup-form" method="get" >
 				<div class="signup-form_header">
 					<img src="https://img.icons8.com/color/48/000000/group-background-selected.png" alt="">
 					<h1>Formulaire Accessible</h1>
 					<p>* Champs Obligatoire</p>
 				</div>
-				<div class="signup-form_two-items">
+				<div class="signup-form_two-items" >
 					<div>
 						<label for="fname">Prenom: <span aria-hidden="true">*</span></label>
-						<input aria-required="true" class="required-field" type="text" id="fname" name="fname" aria-describedby="" >
+						<input aria-required="true" class="required-field" type="text" id="fname" name="fname" aria-describedby="" autocomplete="fname" >
 						<div class="error-message" id="error-required-name">Le champ prénom est obligatoire.</div>
 					</div>
-					<div>
+					<div >
 						<label for="lname">Surnom: <span aria-hidden="true">*</span></label>
-						<input aria-required="true" class="required-field" type="text" id="lname" name="lname"  aria-describedby="">
+						<input aria-required="true" class="required-field" type="text" id="lname" name="lname"  aria-describedby="" autocomplete="lname">
 						<div class="error-message" id="error-required-lname">Le champ surnom est obligatoire.</div>
 					</div>
 				</div>
-				<div class="signup-form_uname dn">
-					<label for="uname">Nom d'utilisateur: <span aria-hidden="true">*</span></label>
-					<input aria-required="true" class="required-field" type="text" id="uname" name="uname" aria-describedby="" >
-					<div class="error-message" id="error-required-uname">Le champ utilisateur est obligatoire.</div>
-				</div>
-				<div >
-					<label for="p_num">No. de telephone: <span aria-hidden="true">*</span></label>
-					<input aria-required="true" class="required-field" type="tel" id="p_num" name="p_num" minlength="8" maxlength="10" size="15" >
-					<div class="error-message" id="error-required-p_num"></div>
+				
+				<div class="signup-form_p_num ">
+					<label for="p_num">Numéro de téléphone: <span aria-hidden="true">*</span></label>
+					<input aria-required="true" class="required-field" type="tel" id="p_num" name="p_num" minlength="8" maxlength="10" autocomplete="p_num">
+					<div class="error-message" id="error-required-p_num">Le champ numéro de téléphone est obligatoire.</div>
 				</div>
 
-				<div >
+				<div class="signup-form_code_postal ">
 					<label for="code_postal">Code Postal: <span aria-hidden="true">*</span></label>
-					<input aria-required="true" class="required-field" id="code_postal" name="code_postal" minlength="3" maxlength="5" size="15" >
-					<div class="error-message" id="error-required-code_postal"></div>
+					<input aria-required="true" class="required-field" id="code_postal" name="code_postal" minlength="3" maxlength="5" autocomplete="code_postal">
+					<div class="error-message" id="error-required-code_postal">Le champ code postal est obligatoire.</div>
 				</div>
 				
 				<div class="signup-form_email ">
-					<label for="email">Courriel: <span aria-hidden="true">*</span></label>
-					<input aria-required="true" class="required-field" id="email" name="email"  placeholder="xyz@mail.com" size="30">
-					<div class="error-message" id="error-required-name">Le champ Courriel est obligatoire.</div>
+					<label for="email">Email: <span aria-hidden="true">*</span></label>
+					<input aria-required="true" class="required-field" id="email" name="email" autocomplete="email" >
+					<div class="error-message" id="error-required-email">Le champ Email est obligatoire.</div>
 				</div>
-				
+				 
 				<div class="signup-form_age dn">
-					<label for="quantity">Âge: <span aria-hidden="true">*</span></label>
+					<label for="age">Âge: <span aria-hidden="true">*</span></label>
 					<input type="number" class="required-field" id="age" name="age" min="1" max="100" >
 					<div class="error-message" id="error-required-age">Le champ Âge est obligatoire.</div>
 				</div>
+
 				<div class="signup-form_dob dn">
-					<label for="quantity">Date de naissance:</label>
+					<label for="dob">Date de naissance:</label>
 					<input type="date" class="required-field" id="dob" name="dob" >
 				</div>
 			
 				<div class="signup-form_address">
 					<div>
 						<label for="addr1">Addresse: <span aria-hidden="true">*</span></label>
-						<input aria-required="true" class="required-field" type="text" id="addr1" name="addr1" aria-describedby="">
+						<input aria-required="true" class="required-field" type="text" id="addr1" name="addr1" aria-describedby="" autocomplete="addr1">
 						<div class="error-message" id="error-required-addr1">Le champ Addresse est obligatoire.</div>
 					</div>
 					<div>
 						<label for="addr2">Addresse 2: </label>
-						<input aria-required="true" class="required-field" id="addr2" name="addr2" >
+						<input class="required-field" id="addr2" name="addr2" >
 					</div>
 				</div>
 				
@@ -157,6 +154,11 @@
 						<label for="conf_pwd">Confirmer mot de passe: <span aria-hidden="true">*</span></label>
 						<input type="password" id="conf_pwd" name="conf_pwd" >
 						<div class="error-message" id="error-required-conf_pwd">Confirmation de mot de passe obligatoire</div>
+					</div>
+					<div class="signup-form_uname dn">
+						<label for="uname">Nom d'utilisateur: <span aria-hidden="true">*</span></label>
+						<input aria-required="true" class="required-field" type="text" id="uname" name="uname" aria-describedby="" autocomplete="uname">
+						<div class="error-message" id="error-required-uname">Le champ utilisateur est obligatoire.</div>
 					</div>
 				</div>
 				<div class="signup-form_remember dn">
