@@ -4,9 +4,22 @@ $(document).ready(function(){
     //       form.submit();
     //     }
     // });
+drctf
+    //Dropdown
+    $(function() {
+      $('.dropdown ul li').on('click', function() {
+        var label = $(this).parent().parent().children('label');
+        label.attr('data-value', $(this).attr('data-value'));
+        label.html($(this).html());
+    
+        $(this).parent().children('.selected').removeClass('selected');
+        $(this).addClass('selected');
+      });
+    });
+
 
     $("#signup-form").on("submit",function(){
-        
+
         // Validate Username
         $("#error-required-uname").hide();
         let usernameError = true;
@@ -22,31 +35,25 @@ $(document).ready(function(){
           return false;
      } else if (usernameValue.length < 3 || usernameValue.length > 10) {
        $("#error-required-uname").show();
-       $("#error-required-uname").html("**length of username must be between 3 and 10");
+       $("#error-required-uname").html("**La longueure du nom d'utilisateur doit etre entre 3 et 10");
       usernameError = false;
       return false;
     } else {
       $("#error-required-uname").hide();
     }
   }
-
-      
-
-    // Validate Email
-    const email = document.getElementById("email");
-    email.addEventListener("blur", () => {
-    let regex = /^([_\-\.0-9a-zA-Z]+)@([_\-\.0-9a-zA-Z]+)\.([a-zA-Z]){2,7}$/;
-    let s = email.value;
-      if (regex.test(s)) {
-    email.classList.remove("is-invalid");
-      emailError = true;
-    } else {
-      email.classList.add("is-invalid");
-      emailError = false;
-    }
-      });
-
+  
+        //Validate Phone Number
+        //it will only allow numeric keys
+        $(".AllowNumeric").on("keypress keyup blur",function (event) {    
+          $(this).val($(this).val().replace(/[^\d].+/, ""));
+            if ((event.which < 8 || event.which > 10)) {
+       event.preventDefault();
+            }
+       });
         
+
+
         verifyPassword($("#pwd").val());
         var validate = 0;
 

@@ -6,13 +6,18 @@ body {
 
 .signup-form {
   width: 768px;
-  margin: 0 auto; }
+  margin: 0 auto;
+ }
   .signup-form label {
     margin-right: 20px; }
   .signup-form input {
     margin-bottom: 10px; }
   .signup-form .signup-form_footer button {
-    padding: 5px; }
+    padding: 5px;
+    text-align: center;
+    margin: auto;
+    display: flex;
+    display: grid; }
   .signup-form .error-message__right {
     display: flex;
     flex-direction: row;
@@ -61,7 +66,7 @@ body {
     left: 5px; }
   .signup-form .lname_err-coords {
     top: 59px;
-    left: 180px; }
+    left: 180px; } 
   .signup-form .uname_err-coords {
     top: 125px;
     left: 175px; }
@@ -80,5 +85,189 @@ body {
   .signup-form .error-message {
     display: none;
     color: red; }
+    
+  .wrapper {
+    display: flex;
+    align-items: flex-start;
+    width: 40%;
+    height: 100%; }
+    
+  .dropdown {
+    margin: 0px auto;
+    position: relative;
+    width: calc(100% - 60px);
+    max-width: 300px; }
+    
+  .dropdown label {
+    display: block;
+    padding: 8px 10px;
+    background: #e9e9e9;
+    color: #000000;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+    cursor: pointer; }
+    
+  .dropdown ul {
+    list-style: none;
+    position: absolute;
+    width: 90%; }
+    
+  .dropdown ul li {
+    padding: 0px 16px;
+    background: #DDD;
+    color: #000000;
+    text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.8);
+    height: 0px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: height 0.1s linear 0s; }
+    
+  .dropdown ul li:hover,
+  .dropdown ul li.selected {
+    background: #40e0d0;
+    color: #FAFAFA;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); }
+    
+  .dropdown:hover ul li {
+    padding: 8px 16px;
+    height: 34px; }
 
+   
+    .inbox {
+      max-width: 100px;
+      margin: 40px auto;
+      background: rgb(197, 194, 194);
+      border-radius: 5px;
+      box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
+    }
+    .item {
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid #979797;
+    }
+    .item:last-child {
+      border-bottom: 0;
+    }
+    input:checked + p {
+      background: #F9F9F9;
+      text-decoration: line-through;
+    }
+    input[type="checkbox"] {
+      margin: 15px;
+    }
+    p {
+      margin: 0;
+      padding: 3px;
+      transition: background 0.5s;
+      flex: 5;
+      font-size: 15px;
+      font-weight: 100;
+      border-left: 5px solid #ff1212;
+    }
+
+    @-webkit-keyframes click-wave {
+  0% {
+    height: 20px;
+    width: 20px;
+    opacity: 0.35;
+    position: relative;
+  }
+  100% {
+    height: 0px;
+    width: 30px;
+    margin-left: -80px;
+    margin-top: -80px;
+    opacity: 0;
+  }
+}
+@-moz-keyframes click-wave {
+  0% {
+    height: 20px;
+    width: 20px;
+    opacity: 0.35;
+    position: relative;
+  }
+  100% {
+    height: 100px;
+    width: 100px;
+    margin-left: -80px;
+    margin-top: -80px;
+    opacity: 0;
+  }
+}
+@keyframes click-wave {
+  0% {
+    height: 20px;
+    width: 20px;
+    opacity: 0.35;
+    position: relative;
+  }
+  100% {
+    height: 50px;
+    width: 50px;
+    margin-left: -80px;
+    margin-top: -80px;
+    opacity: 0;
+  }
+}
+.option-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  top: 10.3333333333px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 20px;
+  width: 20px;
+  -webkit-transition: all 0.15s ease-out 0s;
+  -moz-transition: all 0.15s ease-out 0s;
+  transition: all 0.15s ease-out 0s;
+  background: #adb2b8;
+  border: none;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 0.5rem;
+  outline: none;
+  position: relative;
+  z-index: 1000;
+}
+.option-input:hover {
+  background: #4c4e4e;
+}
+.option-input:checked {
+  background: #40e0d0;
+}
+.option-input:checked::before {
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  content: "✖";
+  display: inline-block;
+  font-size: 18.6666666667px;
+  text-align: center;
+  line-height: 20px;
+}
+.option-input:checked::after {
+  -webkit-animation: click-wave 0.65s;
+  -moz-animation: click-wave 0.65s;
+  animation: click-wave 0.65s;
+  background: #40e0d0;
+  content: "";
+  display: block;
+  position: relative;
+  z-index: 1000;
+}
+.option-input.radio {
+  border-radius: 50%;
+}
+.option-input.radio::after {
+  border-radius: 50%;
+}
+
+
+    
 /*# sourceMappingURL=style.css.map */

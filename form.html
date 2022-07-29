@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" type="text/javascript"></script>
 		<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js" type="text/javascript"></script>
-		<title>Formulaire d'Accessibilite</title>
+		<title>Formulaire Accessible</title>
 		<link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/style.css">
 	</head>
@@ -37,7 +37,7 @@
 				</div>
 				<div class="dn">
 					<label for="p_num">No. de telephone: <span aria-hidden="true">*</span></label>
-					<input aria-required="true" class="required-field" type="tel" id="p_num" name="p_num" minlength="8" maxlength="11" size="15" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" >
+					<input aria-required="true" class="required-field" type="tel" id="p_num" name="p_num" minlength="8" maxlength="10" size="15" >
 					<div class="error-message" id="error-required-p_num"></div>
 				</div>
 
@@ -47,17 +47,23 @@
 					<div class="error-message" id="error-required-code_postal"></div>
 				</div>
 				
-
 				<div class="signup-form_email dn">
 					<label for="email">Courriel: <span aria-hidden="true">*</span></label>
 					<input aria-required="true" class="required-field" id="email" name="email"  placeholder="xyz@mail.com" size="30">
 					<div class="error-message" id="error-required-name">Le champ Courriel est obligatoire.</div>
 				</div>
+				
+				<!--
 				<div class="signup-form_age dn">
 					<label for="quantity">Âge: <span aria-hidden="true">*</span></label>
 					<input type="number" class="required-field" id="age" name="age" min="1" max="100" >
 					<div class="error-message" id="error-required-age">Le champ Âge est obligatoire.</div>
 				</div>
+				<div class="signup-form_dob dn">
+					<label for="quantity">Date de naissance:</label>
+					<input type="date" class="required-field" id="dob" name="dob" >
+				</div>
+				
 				<div class="signup-form_address">
 					<div>
 						<label for="addr1">Addresse: <span aria-hidden="true">*</span></label>
@@ -79,51 +85,84 @@
 						<option value="Italia">Italie</option>
 						<option value="Germany">Allemagne</option>
 					</select>
-				</div>
+					<div class="signup-form_gender dn">
+						<fieldset>
+							<legend>Langages de préférences</legend>
+							<label class="container">Français
+								<input type="checkbox" checked="checked">
+								<span class="checkmark"></span>
+							  </label>
+							  
+							  <label class="container">Anglais
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							  </label>
+							  
+							  <label class="container">Espagnole
+								<input type="checkbox">
+								<span class="checkmark"></span>
+							  </label>
+						</fieldset>
+				</div>`
 				<div class="signup-form_gender dn">
 					<fieldset>
 						<legend>Genre</legend>
-						<label for="male">Homme</label>
-						<input type="radio" id="male" name="gender" value="male">
-						<label for="female">Femme</label>
-						<input type="radio" id="female" name="gender" value="female">
-						<label for="other">Autre</label>
-						<input type="radio" id="other" name="gender" value="other">
+						<label>
+							<input type="radio" role="radio" class="option-input radio" name="example" CHECKED/>
+							Homme
+						  </label>
+						  <label>
+							<input type="radio" role="radio" class="option-input radio" name="example" />
+							Femme
+						  </label>
+						  <label>
+							<input type="radio" role="radio" class="option-input radio" name="example" />
+							Autre..
+						  </label>
 					</fieldset>
 				</div>
 				<div class="signup-form_disabilities dn">
 					<div class="error-message" id="error-required-age">Veuillez selectionné votre case à cocher</div>
 					<fieldset>
-						<legend>Handicaps... </legend>
-						<p>
-							<label for="visual">
-							Handicaps Visuel
-							<input type="checkbox" id="visual" />
-							</label>
-						</p>
-						<p>
-							<label for="auditory">
-							Handicaps Auditif
-							<input type="checkbox" id="auditory" />
-							</label>
-						</p>
-						<p>
-							<label for="motor">
-							Handicaps Moteur
-							<input type="checkbox" id="motor" />
-							</label>
-						</p>
-						<p>
-							<label for="cognitive">
-							Cognitif
-							<input type="checkbox" id="cognitive" />
-							</label>
-						</p>
-						<textarea name="message" rows="3" cols="70">
+					   <legend>Handicaps... </legend>
+					   <h4>Sélectionnez....</h4>
+					   <div>
+						<label>
+						  <input type="checkbox" class="option-input checkbox" role="checkbox" aria-labelledby="visuel" CHECKED />
+						  Handicaps Visuel
+						</label>
+						<label>
+						  <input type="checkbox" class="option-input checkbox" />
+						  Handicaps Auditif
+						</label>
+						<label>
+						  <input type="checkbox" class="option-input checkbox" />
+						  Handicaps Moteur
+						</label>
+						<label>
+							<input type="checkbox" class="option-input checkbox" />
+						  Cognitif
+						</label>
+					  </div>
+				</div>
+				
+				
+						<textarea name="message" rows="3" cols="93">
 							Information additionnelle...
 						</textarea>
 					</fieldset>
-				</div>
+					<div class="wrapper">
+						<label for="dropdown">Portez-vous des appareils?..</label>
+						<div class="dropdown">
+						  <label data-value="">Sélectionnez</label>
+						  <ul>
+							<li data-value="1">Auditif</li>
+							<li data-value="2">Lunettes</li>
+							<li data-value="3">Autres..</li>
+						  </ul>
+						</div>
+					</div>	
+					
 				<div class="signup-form_two-items dn">
 					<div class="dn">
 						<label for="pwd">Mot de passe: <span aria-hidden="true">*</span></label>
@@ -150,6 +189,7 @@
 					<div class="error-message_arrow"></div>
 					<div class="error-message_body"><span>Message d'erreur</span></div>
 				</section>
+				-->
 			</form>
 		</main>
 		<script src="js/script.js" type="text/javascript"></script>
