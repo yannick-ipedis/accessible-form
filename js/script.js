@@ -4,7 +4,7 @@ $(document).ready(function(){
     //       form.submit();
     //     }
     // });
-drctf
+
     //Dropdown
     $(function() {
       $('.dropdown ul li').on('click', function() {

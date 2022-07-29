@@ -35,25 +35,24 @@
 					<input aria-required="true" class="required-field" type="text" id="uname" name="uname" aria-describedby="" >
 					<div class="error-message" id="error-required-uname">Le champ utilisateur est obligatoire.</div>
 				</div>
-				<div class="dn">
+				<div >
 					<label for="p_num">No. de telephone: <span aria-hidden="true">*</span></label>
 					<input aria-required="true" class="required-field" type="tel" id="p_num" name="p_num" minlength="8" maxlength="10" size="15" >
 					<div class="error-message" id="error-required-p_num"></div>
 				</div>
 
-				<div class="dn">
+				<div >
 					<label for="code_postal">Code Postal: <span aria-hidden="true">*</span></label>
 					<input aria-required="true" class="required-field" id="code_postal" name="code_postal" minlength="3" maxlength="5" size="15" >
 					<div class="error-message" id="error-required-code_postal"></div>
 				</div>
 				
-				<div class="signup-form_email dn">
+				<div class="signup-form_email ">
 					<label for="email">Courriel: <span aria-hidden="true">*</span></label>
 					<input aria-required="true" class="required-field" id="email" name="email"  placeholder="xyz@mail.com" size="30">
 					<div class="error-message" id="error-required-name">Le champ Courriel est obligatoire.</div>
 				</div>
 				
-				<!--
 				<div class="signup-form_age dn">
 					<label for="quantity">Âge: <span aria-hidden="true">*</span></label>
 					<input type="number" class="required-field" id="age" name="age" min="1" max="100" >
@@ -63,7 +62,7 @@
 					<label for="quantity">Date de naissance:</label>
 					<input type="date" class="required-field" id="dob" name="dob" >
 				</div>
-				
+			
 				<div class="signup-form_address">
 					<div>
 						<label for="addr1">Addresse: <span aria-hidden="true">*</span></label>
@@ -75,6 +74,7 @@
 						<input aria-required="true" class="required-field" id="addr2" name="addr2" >
 					</div>
 				</div>
+				
 				<div class="signup-form_country dn">
 					<label for="country">Pays:</label>
 					<select id="country" name="country">
@@ -85,25 +85,7 @@
 						<option value="Italia">Italie</option>
 						<option value="Germany">Allemagne</option>
 					</select>
-					<div class="signup-form_gender dn">
-						<fieldset>
-							<legend>Langages de préférences</legend>
-							<label class="container">Français
-								<input type="checkbox" checked="checked">
-								<span class="checkmark"></span>
-							  </label>
-							  
-							  <label class="container">Anglais
-								<input type="checkbox">
-								<span class="checkmark"></span>
-							  </label>
-							  
-							  <label class="container">Espagnole
-								<input type="checkbox">
-								<span class="checkmark"></span>
-							  </label>
-						</fieldset>
-				</div>`
+				</div>
 				<div class="signup-form_gender dn">
 					<fieldset>
 						<legend>Genre</legend>
@@ -144,14 +126,15 @@
 						  Cognitif
 						</label>
 					  </div>
-				</div>
 				
 				
-						<textarea name="message" rows="3" cols="93">
+				
+						<textarea name="message" rows="3" cols="93" dn>
 							Information additionnelle...
 						</textarea>
+				
 					</fieldset>
-					<div class="wrapper">
+					<div class="wrapper" >
 						<label for="dropdown">Portez-vous des appareils?..</label>
 						<div class="dropdown">
 						  <label data-value="">Sélectionnez</label>
@@ -161,7 +144,8 @@
 							<li data-value="3">Autres..</li>
 						  </ul>
 						</div>
-					</div>	
+					</div>
+				</div>	
 					
 				<div class="signup-form_two-items dn">
 					<div class="dn">
@@ -179,6 +163,7 @@
 					<input type="checkbox" id="remember" checked="checked" name="remember">
 					<label for="remember">Politique de confidentialité</label>
 				</div>
+			
 				<div class="signup-form_footer">
 					<button type="submit">
 						Soumettre
@@ -189,7 +174,6 @@
 					<div class="error-message_arrow"></div>
 					<div class="error-message_body"><span>Message d'erreur</span></div>
 				</section>
-				-->
 			</form>
 		</main>
 		<script src="js/script.js" type="text/javascript"></script>

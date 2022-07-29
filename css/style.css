@@ -8,6 +8,11 @@ body {
   width: 768px;
   margin: 0 auto;
  }
+
+ .signup-form .dn{
+  visibility: hidden;
+ 
+ }
   .signup-form label {
     margin-right: 20px; }
   .signup-form input {
