@@ -4,8 +4,7 @@ $(document).ready(function(){
     //       form.submit();
     //     }
     // });
-
-    //Dropdown
+//----Dropdown------------------------------------------------------------------------------------------------------------------
     $(function() {
       $('.dropdown ul li').on('click', function() {
         var label = $(this).parent().parent().children('label');
@@ -17,10 +16,9 @@ $(document).ready(function(){
       });
     });
 
-
+//----Validate Username------------------------------------------------------------------------------------------------------------------
     $("#signup-form").on("submit",function(){
 
-        // Validate Username
         $("#error-required-uname").hide();
         let usernameError = true;
         $("#uname").keyup(function () {
@@ -42,18 +40,17 @@ $(document).ready(function(){
       $("#error-required-uname").hide();
     }
   }
-  
-        //Validate Phone Number
-        //it will only allow numeric keys
-        $(".AllowNumeric").on("keypress keyup blur",function (event) {    
-          $(this).val($(this).val().replace(/[^\d].+/, ""));
-            if ((event.which < 8 || event.which > 10)) {
-       event.preventDefault();
-            }
-       });
-        
+   
+  //----Validate Phone Number------------------------------------------------------------------------------------------------------------------
+        //allow only numeric keys
+        $(".isNumeric").on("keypress keyup blur",function (event) {    
+                  $(this).val($(this).val().replace(/[^\d].+/, ""));
+                   if ((event.which < 48 || event.which > 57)) {
+                       event.p_num();
+                   }
+               });
 
-
+//----Validate password------------------------------------------------------------------------------------------------------------------
         verifyPassword($("#pwd").val());
         var validate = 0;
 
@@ -70,14 +67,14 @@ $(document).ready(function(){
             } 
             else{
                 $(this).parent().find(".error-message").hide(); //Hide error mesage
-                $(this).attr("aria-describedby",""); //Remove association error message to field
+                $(this).attr("aria-describedby",""); //Remove asxsociation error message to field
                 $(this).removeAttr("aria-invalid"); //Remove invalid statement
             }
         });
 
 
         function verifyPassword(pwd) { 
-             //Validate Password
+             
             $("#error-required-pwd").hide();
             let passwordError = true;
             $("#error-required-pwd").keyup(function () {

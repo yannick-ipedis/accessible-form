@@ -16,30 +16,30 @@
 				<div class="signup-form_header">
 					<img src="https://img.icons8.com/color/48/000000/group-background-selected.png" alt="">
 					<h1>Formulaire Accessible</h1>
-					<p>* Champs Obligatoire</p>
+					<p>* Champs Obligatoires</p>
 				</div>
 				<div class="signup-form_two-items" >
 					<div>
-						<label for="fname">Prenom: <span aria-hidden="true">*</span></label>
-						<input aria-required="true" class="required-field" type="text" id="fname" name="fname" aria-describedby="" autocomplete="fname" >
+						<label for="fname">Prénom: <span aria-hidden="true">*</span></label>
+						<input aria-required="true" class="required-field" type="text" id="fname" name="fname" aria-describedby="fname" autocomplete="given-name" >
 						<div class="error-message" id="error-required-name">Le champ prénom est obligatoire.</div>
 					</div>
 					<div >
 						<label for="lname">Surnom: <span aria-hidden="true">*</span></label>
-						<input aria-required="true" class="required-field" type="text" id="lname" name="lname"  aria-describedby="" autocomplete="lname">
+						<input aria-required="true" class="required-field" type="text" id="lname" name="lname"  aria-describedby="lname" autocomplete="family-name">
 						<div class="error-message" id="error-required-lname">Le champ surnom est obligatoire.</div>
 					</div>
 				</div>
 				
 				<div class="signup-form_p_num ">
 					<label for="p_num">Numéro de téléphone: <span aria-hidden="true">*</span></label>
-					<input aria-required="true" class="required-field" type="tel" id="p_num" name="p_num" minlength="8" maxlength="10" autocomplete="p_num">
+					<input aria-required="true" class="required-field" type="tel" id="p_num" name="p_num" minlength="8" maxlength="10" autocomplete="tel">
 					<div class="error-message" id="error-required-p_num">Le champ numéro de téléphone est obligatoire.</div>
 				</div>
 
 				<div class="signup-form_code_postal ">
 					<label for="code_postal">Code Postal: <span aria-hidden="true">*</span></label>
-					<input aria-required="true" class="required-field" id="code_postal" name="code_postal" minlength="3" maxlength="5" autocomplete="code_postal">
+					<input aria-required="true" class="required-field" id="code_postal" name="code_postal" minlength="3" maxlength="5" autocomplete="postal-code">
 					<div class="error-message" id="error-required-code_postal">Le champ code postal est obligatoire.</div>
 				</div>
 				
@@ -55,15 +55,11 @@
 					<div class="error-message" id="error-required-age">Le champ Âge est obligatoire.</div>
 				</div>
 
-				<div class="signup-form_dob dn">
-					<label for="dob">Date de naissance:</label>
-					<input type="date" class="required-field" id="dob" name="dob" >
-				</div>
 			
 				<div class="signup-form_address">
 					<div>
 						<label for="addr1">Addresse: <span aria-hidden="true">*</span></label>
-						<input aria-required="true" class="required-field" type="text" id="addr1" name="addr1" aria-describedby="" autocomplete="addr1">
+						<input aria-required="true" class="required-field" type="text" id="addr1" name="addr1" aria-describedby="addr1" autocomplete="address-line1">
 						<div class="error-message" id="error-required-addr1">Le champ Addresse est obligatoire.</div>
 					</div>
 					<div>
@@ -85,52 +81,55 @@
 				</div>
 				<div class="signup-form_gender dn">
 					<fieldset>
-						<legend>Genre</legend>
+						<legend><h4>Genres....</h4></legend>
 						<label>
 							<input type="radio" role="radio" class="option-input radio" name="example" CHECKED/>
 							Homme
 						  </label>
+						  
 						  <label>
 							<input type="radio" role="radio" class="option-input radio" name="example" />
 							Femme
 						  </label>
+						 
 						  <label>
 							<input type="radio" role="radio" class="option-input radio" name="example" />
-							Autre..
+							Autres...
 						  </label>
 					</fieldset>
 				</div>
 				<div class="signup-form_disabilities dn">
 					<div class="error-message" id="error-required-age">Veuillez selectionné votre case à cocher</div>
 					<fieldset>
-					   <legend>Handicaps... </legend>
-					   <h4>Sélectionnez....</h4>
+					   <legend><h4>Handicapes....</h4> </legend>
 					   <div>
 						<label>
-						  <input type="checkbox" class="option-input checkbox" role="checkbox" aria-labelledby="visuel" CHECKED />
+						  <input type="checkbox" class="option-input checkbox" role="checkbox" id="visual" name="visual" aria-labelledby="visual" CHECKED />
 						  Handicaps Visuel
 						</label>
 						<label>
-						  <input type="checkbox" class="option-input checkbox" />
+						  <input type="checkbox" class="option-input checkbox" role="checkbox" id="auditory" name="auditory" aria-labelledby="auditory"/>
 						  Handicaps Auditif
 						</label>
 						<label>
-						  <input type="checkbox" class="option-input checkbox" />
+						  <input type="checkbox" class="option-input checkbox" role="checkbox" id="motor" name="motor" aria-labelledby="motor"/>
 						  Handicaps Moteur
 						</label>
 						<label>
-							<input type="checkbox" class="option-input checkbox" />
+							<input type="checkbox" class="option-input checkbox" role="checkbox" id="cognitive" name="cognitive" aria-labelledby="cognitive"/>
 						  Cognitif
 						</label>
 					  </div>
-				
-				
-				
+					  <br>
+
+					  <label for="message">
 						<textarea name="message" rows="3" cols="93" dn>
 							Information additionnelle...
 						</textarea>
-				
+					  </label>				  
 					</fieldset>
+					<br>
+
 					<div class="wrapper" >
 						<label for="dropdown">Portez-vous des appareils?..</label>
 						<div class="dropdown">
@@ -142,12 +141,12 @@
 						  </ul>
 						</div>
 					</div>
-				</div>	
+				</div> <br>	
 					
 				<div class="signup-form_two-items dn">
 					<div class="dn">
 						<label for="pwd">Mot de passe: <span aria-hidden="true">*</span></label>
-						<input type="password" id="pwd" name="pwd" pattern=".{6,}" >
+						<input type="password" id="pwd" name="pwd" autocomplete="current-password" >
 						<div class="error-message" id="error-required-pwd">Mot de passe obligatoire.</div>
 					</div>
 					<div class="dn">
@@ -157,8 +156,8 @@
 					</div>
 					<div class="signup-form_uname dn">
 						<label for="uname">Nom d'utilisateur: <span aria-hidden="true">*</span></label>
-						<input aria-required="true" class="required-field" type="text" id="uname" name="uname" aria-describedby="" autocomplete="uname">
-						<div class="error-message" id="error-required-uname">Le champ utilisateur est obligatoire.</div>
+						<input aria-required="true" class="required-field" type="text" id="uname" name="uname" aria-describedby="uname" autocomplete="username">
+						<div class="error-message" id="error-required-uname">Le champ nom d'utilisateur est obligatoire.</div>
 					</div>
 				</div>
 				<div class="signup-form_remember dn">
