@@ -16,14 +16,21 @@ $(document).ready(function(){
       });
     });
 
-//----Validate Username------------------------------------------------------------------------------------------------------------------
+//----Validate Username---------------------------------------------------------------------------------------------------------
     $("#signup-form").on("submit",function(){
 
         $("#error-required-uname").hide();
         let usernameError = true;
-        $("#uname").keyup(function () {
-       validateUsername();
-    });
+        validateUsername();
+
+        // Check Numeric Fields
+        $(".numeric").each(function(){
+          validateNumber("#" + $(this).attr("id"));
+        });
+
+        // Check Email Fields
+        validateEmail();
+        
  
     function validateUsername() {
       let usernameValue = $("#uname").val();
@@ -32,7 +39,7 @@ $(document).ready(function(){
           usernameError = false;
           return false;
      } else if (usernameValue.length < 3 || usernameValue.length > 10) {
-       $("#error-required-uname").show();
+       $("#error-required-unam e").show();
        $("#error-required-uname").html("**La longueure du nom d'utilisateur doit etre entre 3 et 10");
       usernameError = false;
       return false;
@@ -41,16 +48,49 @@ $(document).ready(function(){
     }
   }
    
-  //----Validate Phone Number------------------------------------------------------------------------------------------------------------------
-        //allow only numeric keys
-        $(".isNumeric").on("keypress keyup blur",function (event) {    
-                  $(this).val($(this).val().replace(/[^\d].+/, ""));
-                   if ((event.which < 48 || event.which > 57)) {
-                       event.p_num();
-                   }
-               });
+  //----Validate Phone Number and Postal Code-----------------------------------------------------------------------------------------------------
 
-//----Validate password------------------------------------------------------------------------------------------------------------------
+  function validateNumber(element){
+    let value = $(element).val();
+    var limit = element == "#p_num" ? 8 : 5; // Assign correct limit of length depending on field
+    var reg = /^\d+$/; //Number regex
+    if (!reg.test(value)) { // Check if value of field contains only numbers
+        $(element).parent().find(".error-message").show(); //display error message
+        addAria(element);
+        validate++;
+    }
+    else if (value.length < limit){
+        $(element).parent().find(".error-message").show(); //display error message
+        addAria(element);
+        validate++;
+    }
+    else{
+      $(element).parent().find(".error-message").hide(); //hide error message
+      removeAria(element)
+    }
+  }
+
+  //----Validate Email-----------------------------------------------------------------------------------------------------------
+  function validateEmail(){
+    var element = "#email";
+    let value = $(element).val();
+    var reg = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/; //Number regex
+    if (value == ""){
+      $("#error-required-email").html("Le champ Email est obligatoire.").show(); //display error message
+      addAria(element);
+    }
+    else if (!reg.test(value)) {// Check if value of field contains only numbers
+        $("#error-required-email").html("L'email est invalide - Exemple nom@mail.com").show(); //display error message
+        addAria(element);
+    }
+    else{
+      $("#error-required-email").hide(); //hide error message
+      removeAria(element)
+    }
+  }
+      
+
+    //----Validate  Password-----------------------------------------------------------------------------------------------------------
         verifyPassword($("#pwd").val());
         var validate = 0;
 
@@ -60,15 +100,11 @@ $(document).ready(function(){
                 validate++;
                 //Error handling for screen readers
                 $(this).parent().find(".error-message").show(); //Show error message
-                $(this).attr("aria-invalid",true); //Adding invalid statement for screen readers
-                //Associate error message to field
-                var errorid = $(this).parent().find(".error-message").attr("id");
-                $(this).attr("aria-describedby",errorid);
+                addAria($(this));
             } 
             else{
                 $(this).parent().find(".error-message").hide(); //Hide error mesage
-                $(this).attr("aria-describedby",""); //Remove asxsociation error message to field
-                $(this).removeAttr("aria-invalid"); //Remove invalid statement
+                removeAria($(this));
             }
         });
 
@@ -98,7 +134,22 @@ $(document).ready(function(){
            } else {  
             alert("Mot de passe invalide");            
            }  
-        }  
+        } 
+
+        // Adding Accessibility attributes if field is invalid
+        function addAria(element){
+          $(element).attr("aria-invalid",true); //Adding invalid statement for screen readers
+          //Associate error message to field
+          var errorid = $(element).parent().find(".error-message").attr("id");
+          $(element).attr("aria-describedby",errorid);
+        }
+
+        // Removing Accessibility Attributes if field is valid
+        function removeAria(element){
+          $(element).removeAttr("aria-invalid"); //Remove invalid statement
+          $(element).attr("aria-describedby",""); //Remove asxsociation error message to field
+        }
+
         if (validate != 0){
             $("input[aria-invalid]:eq(0)").focus(); //Set focus on first invalid field
             return false;
