@@ -90,7 +90,7 @@ $(document).ready(function(){
          // Check Email Fields
           validateEmail();
       
-u
+
 //----Validate  Password-----------------------------------------------------------------------------------------------------------
         verifyPassword($("#pwd").val());
         var validate = 0;
