@@ -38,7 +38,7 @@
 					</div>
 					<div>
 						<label for="addr2">Adresse 2: </label>
-						<input class="required-field" id="addr2" name="addr2" >
+						<input id="addr2" name="addr2" >
 					</div>
 				</div>
 				
@@ -56,11 +56,11 @@
 				
 				<div class="signup-form_email ">
 					<label for="email">Email: <span aria-hidden="true">*</span></label>
-					<input aria-required="true" type="email" id="email" name="email" autocomplete="email" >
+					<input aria-required="true" type="text" id="email" name="email" autocomplete="email" >
 					<div class="error-message" id="error-required-email"></div>
 				</div>
 				  
-				<div class="signup-form_country dn">
+				<div class="signup-form_country">
 					<label for="country">Pays:</label>
 					<select id="country" name="country">
 						<option value="Mauritius">Maurice</option>
@@ -137,7 +137,7 @@
 					</fieldset>
 					<br>
 
-					<div class="wrapper" >
+					<div class="wrapper dn" >
 						<label for="dropdown">Portez-vous des appareils?</label>
 						<div class="dropdown">
 						  <label data-value="">Sélectionnez</label>
@@ -150,21 +150,30 @@
 					</div>
 				</div> <br>	
 					
-				<div class="signup-form_two-items dn">
-					<div class="dn">
-						<label for="pwd">Mot de passe: <span aria-hidden="true">*</span></label>
-						<input type="password" id="pwd" name="pwd" minlength="5" maxlength="10" autocomplete="new-password" >
-						<div class="error-message" id="error-required-pwd">Mot de passe obligatoire.</div>
-					</div>
-					<div class="dn">
-						<label for="conf_pwd">Confirmer mot de passe: <span aria-hidden="true">*</span></label>
-						<input type="password" id="conf_pwd" name="conf_pwd" minlength="5" maxlength="10" autocomplete="new-password">
-						<div class="error-message" id="error-required-conf_pwd">Confirmation de mot de passe obligatoire</div>
-					</div>
-					<div class="signup-form_uname dn">
+				<div class="signup-form_two-items">
+					<div class="signup-form_uname">
 						<label for="uname">Nom d'utilisateur: <span aria-hidden="true">*</span></label>
-						<input aria-required="true" class="required-field" type="text" id="uname" name="uname" aria-describedby="uname" maxlength="10" autocomplete="username">
-						<div class="error-message" id="error-required-uname">Entrez 10 caractères pour le champ nom d'utilisateur.</div>
+						<input aria-required="true" class="" type="text" id="uname" name="uname" aria-describedby="uname" autocomplete="username">
+						<div class="error-message" id="error-required-uname"></div>
+					</div>
+					<div>
+						<label for="pwd">Mot de passe: <span aria-hidden="true">*</span></label>
+						<input type="password" id="pwd" name="pwd" autocomplete="new-password" aria-required="true" aria-describedby="pswd_info">
+						<div class="error-message" id="error-required-pwd"></div>
+					</div>
+					<div>
+						<label for="conf_pwd">Confirmer mot de passe: <span aria-hidden="true">*</span></label>
+						<input type="password" id="conf_pwd" name="conf_pwd" autocomplete="new-password">
+						<div class="error-message" id="error-required-conf_pwd"></div>
+					</div>
+					<div id="pswd_info" aria-hidden="true">
+						<h4>Le mot de passe doit répondre aux critères suivants :</h4>
+						<ul>
+							<li id="letter">Au moins <strong>une lettre miniscule</strong></li>
+							<li id="capital">Au moins <strong>une lettre majuscule</strong></li>
+							<li id="number">Au moins <strong>un chiffre</strong></li>
+							<li id="length"><strong>8 caractères</strong> au minimum</li>
+						</ul>
 					</div>
 				</div>
 				<div class="signup-form_remember dn">		

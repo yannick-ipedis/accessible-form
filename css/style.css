@@ -12,7 +12,10 @@ body {
  .signup-form dn {
    display: none;
  }
- 
+
+ .dn{
+  display: none;
+ }
  
   .signup-form label {
     margin-right: 20px; }
@@ -273,6 +276,14 @@ body {
 }
 .option-input.radio::after {
   border-radius: 50%;
+}
+
+#pswd_info .invalid{
+  color:red;
+}
+
+#pswd_info .valid{
+  color: green;
 }
 
 
