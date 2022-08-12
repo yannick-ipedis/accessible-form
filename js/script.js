@@ -23,30 +23,24 @@ $(document).ready(function(){
         let usernameError = true;
         validateUsername();
 
-        // Check Numeric Fields
-        $(".numeric").each(function(){
-          validateNumber("#" + $(this).attr("id"));
-        });
+      
+        function validateUsername() {
+          let usernameValue = $("#uname").val();
+          if (usernameValue.length == "") {
+            $("#error-required-uname").show();
+            usernameError = false;
+            return false;
 
-        // Check Email Fields
-        validateEmail();
-        
- 
-    function validateUsername() {
-      let usernameValue = $("#uname").val();
-         if (usernameValue.length == "") {
-       $("#error-required-uname").show();
-          usernameError = false;
-          return false;
-     } else if (usernameValue.length < 3 || usernameValue.length > 10) {
-       $("#error-required-unam e").show();
-       $("#error-required-uname").html("**La longueure du nom d'utilisateur doit etre entre 3 et 10");
-      usernameError = false;
-      return false;
-    } else {
-      $("#error-required-uname").hide();
-    }
-  }
+          } else if (usernameValue.length < 3 || usernameValue.length > 10) {
+            $("#error-required-uname").show();
+            $("#error-required-uname").html("La longuere du nom d'utilisateur doit  être entre 3 et 10");
+            usernameError = false;
+            return false;
+
+          } else {
+            $("#error-required-uname").hide();
+          }
+        }
    
   //----Validate Phone Number and Postal Code-----------------------------------------------------------------------------------------------------
 
@@ -88,9 +82,16 @@ $(document).ready(function(){
       removeAria(element)
     }
   }
-      
+         // Check Numeric Fields
+          $(".numeric").each(function(){
+          validateNumber("#" + $(this).attr("id"));
+          });
 
-    //----Validate  Password-----------------------------------------------------------------------------------------------------------
+         // Check Email Fields
+          validateEmail();
+      
+u
+//----Validate  Password-----------------------------------------------------------------------------------------------------------
         verifyPassword($("#pwd").val());
         var validate = 0;
 
@@ -108,7 +109,6 @@ $(document).ready(function(){
             }
         });
 
-
         function verifyPassword(pwd) { 
              
             $("#error-required-pwd").hide();
@@ -117,23 +117,41 @@ $(document).ready(function(){
               validatePassword();
             });
             
-            //-minimum password length validation  
-            if(pwd.length < 5) {  
-                $("#error-required-pwd").html("Mot de passe obligatoire et doit contenir au moins 5 caracteres!");  
+            //Check if password and confirm password match together
+            if(pwd != conf_pwd) {  
+                $("#error-required-pwd").html("Les mots de passe doivent  être identique.").css("color", "red");  
                 $("#error-required-pwd").show();
-               
-              return false;  
-            }  
- 
-            //-maximum length of confirm password validation  
-            if(conf_pwd.length > 15) {  
-                $("#error-required-conf_pwd").html("Confirmation obligatoire et doit contenir moins 15 caracteres!"); 
-                $("#error-required-conf_pwd").show();
-             return false;  
-
+      
            } else {  
-            alert("Mot de passe invalide");            
+            var password = $("#pwd").val();
+            var confirmPassword = $("#conf_pwd").val();
+            $("#error-required-conf_pwd").html("Les mots de passe ne sont pas identique.").css("color", "red");
+            $("#error-required-conf_pwd").show();           
            }  
+           
+
+           //validate letter
+        if ( pwd.match(/[A-z]/) ) {
+             $('#letter').removeClass('invalid').addClass('valid');
+          } else {
+             $('#letter').removeClass('valid').addClass('invalid');
+        }    
+
+          //validate capital letter
+        if ( pwd.match(/[A-Z]/) ) {
+            $('#capital').removeClass('invalid').addClass('valid');
+          } else {
+         $('#capital').removeClass('valid').addClass('invalid');
+        }
+
+        //validate number
+        if ( pwd.match(/\d/) ) {
+           $('#number').removeClass('invalid').addClass('valid');
+          } else {
+        $('#number').removeClass('valid').addClass('invalid');
+        }
+
+
         } 
 
         // Adding Accessibility attributes if field is invalid
@@ -154,10 +172,7 @@ $(document).ready(function(){
             $("input[aria-invalid]:eq(0)").focus(); //Set focus on first invalid field
             return false;
         }
-
-  
         return false;
         })
-        
-
+  
 })

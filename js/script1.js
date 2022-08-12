@@ -84,6 +84,66 @@ $(document).ready(function () {
       $("#conpasscheck").hide();
     }
   }
+
+  //----Validate  Password-----------------------------------------------------------------------------------------------------------
+  verifyPassword($("#pwd").val());
+  var validate = 0;
+
+  $(".required-field").each(function(){
+      var fieldValue = $(this).val();
+      if (fieldValue == ""){
+          validate++;
+          //Error handling for screen readers
+          $(this).parent().find(".error-message").show(); //Show error message
+          addAria($(this));
+      } 
+      else{
+          $(this).parent().find(".error-message").hide(); //Hide error mesage
+          removeAria($(this));
+      }
+  });
+
+  function verifyPassword(pwd) { 
+       
+      $("#error-required-pwd").hide();
+      let passwordError = true;
+      $("#error-required-pwd").keyup(function () {
+        validatePassword();
+      });
+      
+      //Check if password and confirm password match together
+      if(pwd != conf_pwd) {  
+          $("#error-required-pwd").html("Les mots de passe doivent  être identique.").css("color", "red");  
+          $("#error-required-pwd").show();
+
+     } else {  
+      var password = $("#pwd").val();
+      var confirmPassword = $("#conf_pwd").val();
+      $("#error-required-conf_pwd").html("Les mots de passe ne sont pas identique.").css("color", "red");
+      $("#error-required-conf_pwd").show();           
+     }  
+     
+
+     //validate letter
+  if ( pwd.match(/[A-z]/) ) {
+       $('#letter').removeClass('invalid').addClass('valid');
+    } else {
+       $('#letter').removeClass('valid').addClass('invalid');
+  }    
+
+    //validate capital letter
+  if ( pwd.match(/[A-Z]/) ) {
+      $('#capital').removeClass('invalid').addClass('valid');
+    } else {
+   $('#capital').removeClass('valid').addClass('invalid');
+  }
+
+  //validate number
+  if ( pwd.match(/\d/) ) {
+     $('#number').removeClass('invalid').addClass('valid');
+    } else {
+  $('#number').removeClass('valid').addClass('invalid');
+  }
  
   // Submit button
   $("#submitbtn").click(function () {

@@ -12,7 +12,7 @@
 	</head>
 	<body>
 		<main role="main">
-			<form class="signup-form" action="#" id="signup-form" method="get" >
+			<form class="signup-form" action="#" id="signup-form" method="get">
 				<div class="signup-form_header">
 					<img src="https://img.icons8.com/color/48/000000/group-background-selected.png" alt="">
 					<h1>Formulaire Accessible</h1>
@@ -28,6 +28,17 @@
 						<label for="lname">Surnom: <span aria-hidden="true">*</span></label>
 						<input aria-required="true" class="required-field" type="text" id="lname" name="lname"  aria-describedby="" autocomplete="family-name">
 						<div class="error-message" id="error-required-lname">Le champ surnom est obligatoire.</div>
+					</div>
+				</div>
+				<div class="signup-form_address">
+					<div>
+						<label for="addr1">Adresse: <span aria-hidden="true">*</span></label>
+						<input aria-required="true" class="required-field" type="text" id="addr1" name="addr1" aria-describedby="addr1" autocomplete="address-line1">
+						<div class="error-message" id="error-required-addr1">Le champ Addresse est obligatoire.</div>
+					</div>
+					<div>
+						<label for="addr2">Adresse 2: </label>
+						<input class="required-field" id="addr2" name="addr2" >
 					</div>
 				</div>
 				
@@ -49,27 +60,6 @@
 					<div class="error-message" id="error-required-email"></div>
 				</div>
 				  
-				<div class="signup-form_age dn">
-					<label for="age">Âge: <span aria-hidden="true">*</span></label>
-					<input type="number" class="numeric" id="age" name="age" min="1" max="100" >
-					<div class="error-message" id="error-required-age">Le champ Âge est obligatoire.</div>
-				</div>
-
-			
-				<div class="signup-form_address">
-					<div>
-						<label for="addr1">Addresse: <span aria-hidden="true">*</span></label>
-						<input aria-required="true" class="required-field" type="text" id="addr1" name="addr1" aria-describedby="addr1" autocomplete="address-line1">
-						<div class="error-message" id="error-required-addr1">Le champ Addresse est obligatoire.</div>
-					</div>
-					<div>
-						<label for="addr2">Addresse 2: </label>
-						<input class="required-field" id="addr2" name="addr2" >
-					</div>
-				</div>
-				
-				
-				
 				<div class="signup-form_country dn">
 					<label for="country">Pays:</label>
 					<select id="country" name="country">
@@ -80,26 +70,41 @@
 						<option value="Italia">Italie</option>
 						<option value="Germany">Allemagne</option>
 					</select>
+				</div><br>
+				
+				<div class="signup-form_allergies dn">
+					<fieldset>
+						<legend>Avez-vous des allergies?</legend>
+						<input type="radio" id="yy" name="yy" value="yes" CHECKED>
+						<label for="yes">Oui</label><br>
+
+						<input type="radio" id="nn" name="nn" value="no">
+						<label for="no">Non</label><br>
+
+						<input type="radio" id="dnk" name="dnk" value="dontknow">
+						<label for="dnk">Je ne sais pas</label><br>						
+					</fieldset>
 				</div>
+				<br>
 				<div class="signup-form_gender dn">
 					<fieldset>
 						<legend>Genres</legend>
-						<label>
-							<input type="radio" role="radio" id="homme" class="option-input radio" name="example" CHECKED/>
-							Homme
-						  </label>
-						  
-						  <label>
-							<input type="radio" role="radio" id="femme" class="option-input radio" name="example" />
-							Femme
-						  </label>
-						 
-						  <label>
-							<input type="radio" role="radio" id="autre" class="option-input radio" name="example" />
-							Autre
-						  </label>
+						<div class="radio-wrapper">
+							<input type="radio" role="radio" name="example" id="homme" class="option-input radio" aria-labelledby="homme" CHECKED>
+							<label for="homme">Homme</label>
+						</div>
+						<div class="radio-wrapper">
+							<input type="radio" role="radio" name="example" id="femme" class="option-input radio" aria-labelledby="femme" >
+							<label for="femme">Femme</label>
+						</div>
+						<div class="radio-wrapper">
+							<input type="radio" role="radio" name="example" id="autre" class="option-input radio" aria-labelledby="autre" >
+							<label for="autre">Autre</label>
+						</div>					
 					</fieldset>
-				</div>
+				</div>			
+				
+				<br>
 				<div class="signup-form_disabilities dn">
 					<div class="error-message" id="error-required-age">Veuillez selectionné votre case à cocher</div>
 					<fieldset>
@@ -118,14 +123,14 @@
 						  Handicaps Moteur
 						</label>
 						<label>
-							<input type="checkbox" class="option-input checkbox" role="checkbox" id="cognitive" name="cognitive" aria-labelledby="cognitive"/>
+						  <input type="checkbox" class="option-input checkbox" role="checkbox" id="cognitive" name="cognitive" aria-labelledby="cognitive"/>
 						  Cognitif
 						</label>
 					  </div>
 					  <br>
 
 					  <label for="message">
-						<textarea name="message" rows="3" cols="93" dn>
+						<textarea name="message" rows="3" cols="90" dn>
 							Information additionnelle...
 						</textarea>
 					  </label>				  
@@ -133,7 +138,7 @@
 					<br>
 
 					<div class="wrapper" >
-						<label for="dropdown">Portez-vous des appareils?..</label>
+						<label for="dropdown">Portez-vous des appareils?</label>
 						<div class="dropdown">
 						  <label data-value="">Sélectionnez</label>
 						  <ul>
@@ -148,35 +153,32 @@
 				<div class="signup-form_two-items dn">
 					<div class="dn">
 						<label for="pwd">Mot de passe: <span aria-hidden="true">*</span></label>
-						<input type="password" id="pwd" name="pwd" autocomplete="current-password" >
+						<input type="password" id="pwd" name="pwd" minlength="5" maxlength="10" autocomplete="current-password" >
 						<div class="error-message" id="error-required-pwd">Mot de passe obligatoire.</div>
 					</div>
 					<div class="dn">
 						<label for="conf_pwd">Confirmer mot de passe: <span aria-hidden="true">*</span></label>
-						<input type="password" id="conf_pwd" name="conf_pwd" >
+						<input type="password" id="conf_pwd" name="conf_pwd" minlength="5" maxlength="10" autocomplete="current-password">
 						<div class="error-message" id="error-required-conf_pwd">Confirmation de mot de passe obligatoire</div>
 					</div>
 					<div class="signup-form_uname dn">
 						<label for="uname">Nom d'utilisateur: <span aria-hidden="true">*</span></label>
-						<input aria-required="true" class="required-field" type="text" id="uname" name="uname" aria-describedby="uname" autocomplete="username">
-						<div class="error-message" id="error-required-uname">Le champ nom d'utilisateur est obligatoire.</div>
+						<input aria-required="true" class="required-field" type="text" id="uname" name="uname" aria-describedby="uname" maxlength="10" autocomplete="username">
+						<div class="error-message" id="error-required-uname">Entrez 10 caractères pour le champ nom d'utilisateur.</div>
 					</div>
 				</div>
-				<div class="signup-form_remember dn">
-					<input type="checkbox" id="remember" checked="checked" name="remember">
+				<div class="signup-form_remember dn">		
+					<input type="checkbox" id="remember" role="checkbox" checked="checked" name="remember">
 					<label for="remember">Politique de confidentialité</label>
 				</div>
 			
 				<div class="signup-form_footer">
 					<button type="submit">
-						Soumettre
-						<i class="gg-chevron-right"></i>
+						Soumettre 
+						<i class="gg-chevron-double-right"></i>
 					</button>
 				</div>
-				<section class="error-message">
-					<div class="error-message_arrow"></div>
-					<div class="error-message_body"><span>Message d'erreur</span></div>
-				</section>
+				
 			</form>
 		</main>
 		<script src="js/script.js" type="text/javascript"></script>

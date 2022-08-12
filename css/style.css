@@ -1,4 +1,4 @@
-@import url("https://css.gg/chevron-right.css");
+@import url("https://css.gg/chevron-double-right.css");
 body {
   color: black;
   background: white;
@@ -227,8 +227,8 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  height: 20px;
-  width: 20px;
+  height: 17px;
+  width: 17px;
   -webkit-transition: all 0.15s ease-out 0s;
   -moz-transition: all 0.15s ease-out 0s;
   transition: all 0.15s ease-out 0s;
@@ -243,20 +243,20 @@ body {
   z-index: 1000;
 }
 .option-input:hover {
-  background: #4c4e4e;
+  background: #141414;
 }
 .option-input:checked {
   background: #40e0d0;
 }
 .option-input:checked::before {
-  height: 20px;
-  width: 20px;
+  height: 18px;
+  width: 18px;
   position: absolute;
-  content: "✖";
+  content: "✔";
   display: inline-block;
-  font-size: 18.6666666667px;
+  font-size: 15.6666666667px;
   text-align: center;
-  line-height: 20px;
+  line-height: 18px;
 }
 .option-input:checked::after {
   -webkit-animation: click-wave 0.65s;
