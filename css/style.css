@@ -1,4 +1,4 @@
-@import url("https://css.gg/chevron-right.css");
+@import url("https://css.gg/chevron-double-right.css");
 body {
   color: black;
   background: white;
@@ -9,10 +9,11 @@ body {
   margin: 0 auto;
  }
 
- .signup-form .dn{
-  visibility: hidden;
- 
+ .signup-form dn {
+   display: none;
  }
+ 
+ 
   .signup-form label {
     margin-right: 20px; }
   .signup-form input {
@@ -23,6 +24,7 @@ body {
     margin: auto;
     display: flex;
     display: grid; }
+
   .signup-form .error-message__right {
     display: flex;
     flex-direction: row;
@@ -35,7 +37,7 @@ body {
     height: 0;
     border-top: 6px solid transparent;
     border-bottom: 6px solid transparent;
-    border-right: 6px solid #c0392b; }
+    border-right: 6px solid #bd1402; }
   .signup-form .error-message__top {
     display: flex;
     flex-direction: column-reverse;
@@ -44,7 +46,7 @@ body {
   .signup-form .error-message_arrow__top {
     width: 0;
     height: 0;
-    border-top: 6px solid #c0392b;
+    border-top: 6px solid #bd1402;
     border-right: 6px solid transparent;
     border-left: 6px solid transparent; }
   .signup-form .error-message__bottom {
@@ -57,13 +59,13 @@ body {
   .signup-form .error-message_arrow__bottom {
     width: 0;
     height: 0;
-    border-bottom: 8px solid #c0392b;
+    border-bottom: 8px solid #bd1402;
     border-right: 8px solid transparent;
     border-left: 8px solid transparent; }
   .signup-form .error-message_body {
     padding: 5px;
     border-radius: 3px;
-    background-color: #c0392b;
+    background-color: #bd1402;
     color: white;
     font-size: 0.8em; }
   .signup-form .fname_err-coords {
@@ -129,17 +131,17 @@ body {
   .dropdown ul li:hover,
   .dropdown ul li.selected {
     background: #40e0d0;
-    color: #FAFAFA;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2); }
+    color: #ffffff;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.295); }
     
   .dropdown:hover ul li {
     padding: 8px 16px;
-    height: 34px; }
+    height: 30px; }
 
    
     .inbox {
       max-width: 100px;
-      margin: 40px auto;
+      margin: 30px auto;
       background: rgb(197, 194, 194);
       border-radius: 5px;
       box-shadow: 10px 10px 0 rgba(0,0,0,0.1);
@@ -225,8 +227,8 @@ body {
   right: 0;
   bottom: 0;
   left: 0;
-  height: 20px;
-  width: 20px;
+  height: 17px;
+  width: 17px;
   -webkit-transition: all 0.15s ease-out 0s;
   -moz-transition: all 0.15s ease-out 0s;
   transition: all 0.15s ease-out 0s;
@@ -241,20 +243,20 @@ body {
   z-index: 1000;
 }
 .option-input:hover {
-  background: #4c4e4e;
+  background: #141414;
 }
 .option-input:checked {
   background: #40e0d0;
 }
 .option-input:checked::before {
-  height: 20px;
-  width: 20px;
+  height: 18px;
+  width: 18px;
   position: absolute;
-  content: "✖";
+  content: "✔";
   display: inline-block;
-  font-size: 18.6666666667px;
+  font-size: 15.6666666667px;
   text-align: center;
-  line-height: 20px;
+  line-height: 18px;
 }
 .option-input:checked::after {
   -webkit-animation: click-wave 0.65s;
