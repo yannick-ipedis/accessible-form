@@ -9,14 +9,15 @@ body {
   margin: 0 auto;
  }
 
+ 
  .signup-form dn {
    display: none;
  }
 
  .dn{
-  display: none;
- }
- 
+   display: none !important;
+}
+
   .signup-form label {
     margin-right: 20px; }
   .signup-form input {
@@ -185,6 +186,7 @@ body {
     height: 0px;
     width: 30px;
     margin-left: -80px;
+  
     margin-top: -80px;
     opacity: 0;
   }
@@ -206,8 +208,8 @@ body {
 }
 @keyframes click-wave {
   0% {
-    height: 20px;
-    width: 20px;
+    height: 18px;
+    width: 18px;
     opacity: 0.35;
     position: relative;
   }
@@ -283,9 +285,5 @@ body {
 }
 
 #pswd_info .valid{
-  color: green;
+  color: rgb(16, 146, 16);
 }
-
-
-    
-/*# sourceMappingURL=style.css.map */
