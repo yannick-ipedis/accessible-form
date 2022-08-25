@@ -17,24 +17,24 @@
 					<img src="https://img.icons8.com/color/48/000000/group-background-selected.png" alt="">
 					<h1>Formulaire Accessible</h1>
 					<p>* Champs Obligatoires</p>
-				</div><br>
+				</div>
 				<div class="signup-form_two-items">
 					<div>
 						<label for="fname">Prénom: <span aria-hidden="true">*</span></label>
-						<input aria-required="true" class="required-field" type="text" id="fname" name="fname" aria-describedby="fname" autocomplete="given-name" >
-						<div class="error-message" id="error-required-name">Le champ prénom est obligatoire.</div>
+						<input aria-required="true" class="required-field" type="text" id="fname" name="fname" autocomplete="given-name" >
+						<div class="error-message" id="error-required-name" aria-invalid="true">Le champ prénom est obligatoire.</div>
 					</div>
 					<div>
 						<label for="lname">Surnom: <span aria-hidden="true">*</span></label>
-						<input aria-required="true" class="required-field" type="text" id="lname" name="lname"  aria-describedby="lname" autocomplete="family-name">
-						<div class="error-message" id="error-required-lname">Le champ surnom est obligatoire.</div>
+						<input aria-required="true" class="required-field" type="text" id="lname" name="lname"  autocomplete="family-name" >
+						<div class="error-message" id="error-required-lname" aria-invalid="true">Le champ surnom est obligatoire.</div>
 					</div>
 				</div>
 				<div class="signup-form_address">
 					<div>
 						<label for="addr1">Adresse: <span aria-hidden="true">*</span></label>
-						<input aria-required="true" class="required-field" type="text" id="addr1" name="addr1" aria-describedby="addr1" autocomplete="address-line1">
-						<div class="error-message" id="error-required-addr1">Le champ Addresse est obligatoire.</div>
+						<input aria-required="true" class="required-field" type="text" id="addr1" name="address1"  autocomplete="address-line1">
+						<div class="error-message" id="error-required-addr1" aria-invalid="true">Le champ Addresse est obligatoire.</div>
 					</div>
 					<div>
 						<label for="addr2">Adresse 2: </label>
@@ -44,20 +44,20 @@
 				
 				<div class="signup-form_p_num">
 					<label for="p_num">Numéro de téléphone: <span aria-hidden="true">*</span></label>
-					<input aria-required="true" type="tel" class="numeric" id="p_num" name="p_num"  maxlength="8"  autocomplete="tel" >
-					<div class="error-message error-required-num" id="error-required-p_num">Entrez 8 chiffres pour le numéro de téléphone</div>
+					<input aria-required="true" type="tel" class="numeric" id="p_num" name="p_num" maxlength="8"  autocomplete="tel" >
+					<div class="error-message" id="error-required-p_num" aria-invalid="true" >Entrez 8 chiffres pour le numéro de téléphone</div>
 				</div>
 
 				<div class="signup-form_code_postal">
 					<label for="code_postal">Code Postal: <span aria-hidden="true">*</span></label>
-					<input aria-required="true" class="numeric" type="tel" id="code_postal" name="code_postal"  maxlength="5" autocomplete="postal-code">
-					<div class="error-message error-required-num" id="error-required-p_cp">Entrez 5 chiffres pour le Code Postal</div>
+					<input aria-required="true" class="numeric" type="tel" id="code_postal" name="code_postal" maxlength="5" autocomplete="postal-code" >
+					<div class="error-message" id="error-required-p_cp" aria-invalid="true">Entrez 5 chiffres pour le Code Postal</div>
 				</div>
 				
 				<div class="signup-form_email">
 					<label for="email">Email: <span aria-hidden="true">*</span></label>
-					<input aria-required="true" type="text" id="email" name="email" autocomplete="email" >
-					<div class="error-message" id="error-required-email"></div>
+					<input aria-required="true" type="text" id="email" name="email" autocomplete="email" aria-describedby="error-required-email">
+					<div class="error-message" id="error-required-email" aria-invalid="true"></div>
 				</div>
 				  
 				<div class="signup-form_country ">
@@ -70,104 +70,89 @@
 						<option value="Italia">Italie</option>
 						<option value="Germany">Allemagne</option>
 					</select>
-				</div><br>	
+				</div>
 				
 				<div class="signup-form_allergies dn">
 					<fieldset>
 						<legend>Avez-vous des allergies?</legend><br>
 						
-						<input id="oui" type="radio" role="radio" name="btn" value="oui" aria-checked="true" tabindex="0" checked>
+						<input id="oui" type="radio" role="radio1" name="btn" value="oui" checked>
 						<label for="oui">Oui</label>			
 
-						<input id="non" type="radio" role="radio" name="btn" value="non"  aria-checked="false" tabindex="-1">
+						<input id="non" type="radio" role="radio1" name="btn" value="non">
 						<label for="non">Non</label>
 
-						<input id="maybe" type="radio" role="radio" name="btn" value="maybe"  aria-checked="false" tabindex="-1">
+						<input id="maybe" type="radio" role="radio1" name="btn" value="maybe">
 						<label for="maybe">Je ne sais pas</label>						
 					</fieldset>
 				</div>
-				<br>
-				<div class="signup-form_gender dn">
-					<fieldset>
-						<legend>Genres</legend>
-						<div class="radio-wrapper">
-							<input type="radio" role="radio" name="example" id="homme" class="option-input radio" aria-labelledby="homme" aria-checked="true" checked>
-							<label for="homme">Homme</label>
-						</div>
-						<div class="radio-wrapper">
-							<input type="radio" role="radio" name="example" id="femme" class="option-input radio" aria-labelledby="femme" aria-checked="false">
-							<label for="femme">Femme</label>
-						</div>
-						<div class="radio-wrapper">
-							<input type="radio" role="radio" name="example" id="autre" class="option-input radio" aria-labelledby="autre" aria-checked="false">
-							<label for="autre">Autre</label>
-						</div>					
-					</fieldset>
-				</div>			
 				
-				<br>
-				<div class="signup-form_disabilities">
-					<div class="error-message" id="error-required-age">Veuillez selectionné votre case à cocher</div>
-					<fieldset>
-					   <legend>Handicapes</legend>
-					   
-					   <ul class="checkboxes">
-						<li><div role="checkbox" aria-checked="true" tabindex="0">Handicapes Auditif</div></li>
-						<li><div role="checkbox" aria-checked="false" tabindex="0">Handicapes Visuel</div></li>
-						<li><div role="checkbox" aria-checked="false" tabindex="0">Handicapes Cognitif</div></li>
-						<li><div role="checkbox" aria-checked="false" tabindex="0">Handicapes Moteur</div></li>
-					  </ul>
-						  
-					  <br>			  
-					</fieldset>
-						
-					<br>
+				<div role="radiogroup" aria-labelledby="">
+  					<h4>Genres</h4>
 
+  					<div role="radio" aria-checked="true" tabindex="0">
+                	 Homme
+  					</div>
+
+  					<div role="radio" aria-checked="false" tabindex="-1">
+     				 Femme
+  					</div>
+  					<div role="radio" aria-checked="false" tabindex="-1">
+     				Autre
+  					</div>
+				</div>
+			   
+				
+				<div class="signup-form_disabilities">
+					<h4 id="id-group-label">Handicapes</h4>
+					<div role="group" aria-labelledby="id-group-label">
+  						<ul class="checkboxes">
+							<li><div role="checkbox" aria-checked="true" tabindex="0">Handicapes Auditif</div></li>
+    						<li><div role="checkbox" aria-checked="false" tabindex="-1">Handicapes Viusel</div></li>
+    						<li><div role="checkbox" aria-checked="false" tabindex="-1">Handicapes Moteur</div></li>
+    						<li><div role="checkbox" aria-checked="false" tabindex="-1">Cognitif</div></li>
+							<li><div role="checkbox" aria-checked="false" tabindex="-1">Aucun</div></li>
+  						</ul>		
+					</div>
+				
+					
 					<div class="msg dn">
 						<form>
 						<div class="form-group">
 						  <label for="about">Information additionnelle</label>
-						  <textarea name="about" id="about" cols="93" rows="3" maxlength="100">	
+						  <textarea name="about" id="about" cols="93" rows="3" maxlength="100" >							
 						  </textarea>
-						  <div class="error-message" id="error-required-about">Le champ message est obligatoire.</div>	
+						  <div class="error-message" id="error-required-about" aria-invalid="true">Le champ message est obligatoire.</div>	
 						</div> 
 						</form>
 					</div>
-					  <br>
-
-					<div class="wrapper" >
-						<label for="dropdown">Portez-vous des appareils?</label>
-						<div class="dropdown">
-							<button aria-label class="dropdown-toggle" type="button" aria-haspopup="true"  aria-activedescendant="combobox" aria-readonly="true"
-							aria-owns="opt-list" aria-autocomplete="list" role="combobox" id="dropdown-toggle">
-							  Selectionnez
-							</button>
-							<ul class="dropdown-menu" role="listbox" aria-expanded="false">
-							  <li role="option" tabindex="0">Auditif </li>
-							  <li role="option" tabindex="0">Visuel </li>
-							  <li role="option" tabindex="0">Mobilité</li>
-							  <li role="option" tabindex="0">Autre</li>						
-							</ul>
-						</div>
-					</div>
-				
-				 <br>	
-				 
+					 
+					  <label id="combo1-label" class="combo-label">Portez-vous des appareils?</label>
+					  <div class="combo js-select">
+						  <div aria-controls="listbox1" aria-expanded="false" aria-haspopup="listbox" aria-labelledby="combo1-label" id="combo1" class="combo-input" role="combobox" tabindex="0">
+						  </div>
+						  <div class="combo-menu" role="listbox" id="listbox1" aria-labelledby="combo1-label" tabindex="-1">
+							  <!-- options are inserted here -->
+							  <!-- e.g. <div role="option" id="op1">option text</div>  -->
+						  </div>
+					  </div>
+							
+					
 				<div class="signup-form_two-items ">
 					<div class="signup-form_uname">
 						<label for="uname">Nom d'utilisateur: <span aria-hidden="true">*</span></label>
-						<input aria-required="true" type="text" id="uname" name="uname" aria-describedby="uname" aria-invalid="true" autocomplete="username">
-						<div class="error-message" id="error-required-uname"></div>
+						<input aria-required="true" type="text" id="uname" name="uname" autocomplete="username">
+						<div class="error-message" id="error-required-uname" aria-invalid="true"></div>
 					</div>
 					<div>
 						<label for="pwd">Mot de passe: <span aria-hidden="true">*</span></label>
-						<input aria-required="true" type="password" id="pwd" name="pwd" autocomplete="new-password" aria-invalid="true" aria-describedby="pswd_info">
-						<div class="error-message" id="error-required-pwd"></div>
+						<input aria-required="true" type="password" id="pwd" name="pwd" autocomplete="new-password">
+						<div class="error-message" id="error-required-pwd" aria-invalid="true"></div>
 					</div>
 					<div>
 						<label for="conf_pwd">Confirmer mot de passe: <span aria-hidden="true">*</span></label>
-						<input aria-required="true" type="password" id="conf_pwd" name="conf_pwd" aria-invalid="true" autocomplete="new-password">
-						<div class="error-message" id="error-required-conf_pwd"></div>
+						<input aria-required="true" type="password" id="conf_pwd" name="conf_pwd" autocomplete="new-password">
+						<div class="error-message" id="error-required-conf_pwd" aria-invalid="true"></div>
 					</div>
 					<div id="pswd_info" aria-hidden="true">
 						<h4>Le mot de passe doit répondre aux critères suivants :</h4>
@@ -191,9 +176,13 @@
 					</button>
 				</div>
 			</div>
+			
 				
 			</form>
 		</main>
+		<script src="js/checkbox.js" type="text/javascript"></script>
+		<script src="js/radiobutton.js" type="text/javascript"></script>
+		<script src="js/dropdown.js" type="text/javascript"></script>
 		<script src="js/script.js" type="text/javascript"></script>
 	</body>
 </html>
