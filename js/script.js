@@ -33,7 +33,7 @@ $(document).ready(function() {
       //----Validate Phone Number and Postal Code-----------------------------------------------------------------------------------------------------
       function validateNumber(element) {
         let value = $(element).val();
-        var limit = element == "#p_num" ? 8 : 5; // Assign correct limit of length depending on field
+        var limit = element == "#phone-number_label" ? 8 : 5; // Assign correct limit of length depending on field
         var reg = /^\d+$/; //Number regex
         if (!reg.test(value)) { // Check if value of field contains only numbers
           $(element).parent().find(".error-message").show(); //display error message
@@ -51,7 +51,7 @@ $(document).ready(function() {
   
       //----Validate Email-----------------------------------------------------------------------------------------------------------
       function validateEmail() {
-        var element = "#email";
+        var element = "#email_label";
         let value = $(element).val();
         var reg = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/; //Number regex
         if (value == "") {
@@ -70,8 +70,8 @@ $(document).ready(function() {
   
       //----Validate Username-----------------------------------------------------------------------------------------------------------
       function validateUsername() {
-        let usernameValue = $("#uname").val();
-        var element = "#" + $("#uname").attr("id");
+        let usernameValue = $("#userName_label").val();
+        var element = "#" + $("#userName_label").attr("id");
         if (usernameValue == "") {
           $(element).parent().find(".error-message").html("Le champ Nom utilisateur est obligatoire").show(); //display error message
           addAria(element);
@@ -81,15 +81,15 @@ $(document).ready(function() {
           addAria(element);
           validate++;
         } else {
-          $("#error-required-uname").hide();
+          $("#error-required-userName").hide();
         }
       }
   
       //----Validate  Password-----------------------------------------------------------------------------------------------------------
       function verifyPassword() {
-        var element = "#" + $("#conf_pwd").attr("id");
-        var password = $("#pwd").val();
-        var confirmPassword = $("#conf_pwd").val();
+        var element = "#" + $("#confirm-password_label").attr("id");
+        var password = $("#password_label").val();
+        var confirmPassword = $("#confirm-password_label").val();
   
         //Check if password and confirm password match together
         if (password != confirmPassword) {
@@ -112,7 +112,7 @@ $(document).ready(function() {
       return false;
     });
   
-    $('#pwd').keyup(function() {
+    $('#password_label').keyup(function() {
       console.log(1);
       // keyup code here
       // set password variable
@@ -177,7 +177,7 @@ $(document).ready(function() {
     // Removing Accessibility Attributes if field is valid
     function removeAria(element) {
       $(element).removeAttr("aria-invalid"); //Remove invalid statement
-      $(element).attr("aria-describedby", ""); //Remove asxsociation error message to field
+      $(element).removeAttr("aria-describedby", ""); //Remove asxsociation error message to field
     }
   
 });

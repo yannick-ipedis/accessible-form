@@ -62,4 +62,4 @@ window.addEventListener('load', function () {
   for (let i = 0; i < checkboxes.length; i++) {
     new Checkbox(checkboxes[i]);
   }
-});
+}); 
