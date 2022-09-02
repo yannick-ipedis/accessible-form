@@ -177,7 +177,7 @@ $(document).ready(function() {
     // Removing Accessibility Attributes if field is valid
     function removeAria(element) {
       $(element).removeAttr("aria-invalid"); //Remove invalid statement
-      $(element).removeAttr("aria-describedby", ""); //Remove asxsociation error message to field
+      $(element).removeAttr("aria-describedby"); //Remove association error message to field
     }
   
 });
