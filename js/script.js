@@ -66,6 +66,11 @@ $(document).ready(function() {
           $("#error-required-email").hide(); //hide error message
           removeAria(element)
         }
+        
+        /*$(element).child.("#userName_label");
+        $(element).child.("#password_label");
+        $(element).child.("#confirm-password_label");
+*/
       }
   
       //----Validate Username-----------------------------------------------------------------------------------------------------------
@@ -177,7 +182,6 @@ $(document).ready(function() {
     // Removing Accessibility Attributes if field is valid
     function removeAria(element) {
       $(element).removeAttr("aria-invalid"); //Remove invalid statement
-      $(element).removeAttr("aria-describedby"); //Remove association error message to field
     }
   
 });
