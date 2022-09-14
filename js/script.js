@@ -182,6 +182,7 @@ $(document).ready(function() {
     // Removing Accessibility Attributes if field is valid
     function removeAria(element) {
       $(element).removeAttr("aria-invalid"); //Remove invalid statement
+      $(element).removeAttr("aria-describedby"); //Remove error message association
     }
   
 });

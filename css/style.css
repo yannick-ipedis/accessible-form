@@ -335,7 +335,8 @@ ul.checkboxes li {
   cursor: pointer;
 }
 
-/*Upload file 
+
+/*Upload file */
 
 #fileupload {
   display: none;
@@ -389,4 +390,6 @@ input[type=text]:focus {
   border-color: #265986;
   outline: 2px solid transparent;
 }
-*/
+
+/*Form style*/
+
